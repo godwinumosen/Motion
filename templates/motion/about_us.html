@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box pr-md-2">
+            <div class="heading_container">
+              <h2 class="">
+                About Us
+              </h2>
+            </div>
+            <p class="detail_p_mt">
+              About Motion
+              At iMotion, creativity, storytelling, and a passion for graphic culture are the driving 
+              forces that set us apart and fuel our innovative spirit. Unlike most production companies, 
+              we have our own in-house animation team, making animation our distinctive touch. 
+              This autonomy allows us to control the entire production process, ensuring that the 
+              final result perfectly aligns with our vision.
+              Despite being a young company, we pride ourselves on our ability to deliver projects on 
+              time and within budget, without ever compromising on quality. Our state-of-the-art equipment 
+              and cutting-edge technology enable us to produce content that is visually stunning and technically flawless.
+              We excel in various VFX techniques and 3D Animation, bringing together diverse talents united under a single vision and shared goals. We understand that every project is unique, which is why we offer a range of services tailored to meet your specific needs. From planning to execution, we are here to support you every step of the way
+              Our services include:<br>
+              VFX<br>
+              3D Animation<br>
+              Motion Graphics<br>
+              Post-Production
+              And more
+            </p>
+            <a href="about.html" class="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="{% static 'images/about-img.jpg' %}" class="box_img" alt="about img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section ends -->
+
+
+  {% endblock %}

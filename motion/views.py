@@ -15,3 +15,7 @@ def base (request):
 class HomeView(ListView):
     model = MotionMainPost
     template_name = 'motion/home.html'
+
+#About page of the blog
+def AboutView (request):
+    return render(request, 'motion/about_us.html', {})
