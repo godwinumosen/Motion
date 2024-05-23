@@ -7,21 +7,20 @@ from datetime import datetime, date
     
 # The main model for Deus Magnus Model category
 class MotionMainPost(models.Model):
-    _title = models.CharField(max_length=255, blank=True, null=True)
-    deus_magnus_description = models.TextField()
-    deus_magnus_slug = models.SlugField (max_length=255,blank=True, null=True)
+    mobile_title = models.CharField(max_length=255, blank=True, null=True)
+    mobile_description = models.TextField()
+    mobile_slug = models.SlugField (max_length=255,blank=True, null=True)
     deus_manus_video = models.FileField(upload_to='videos/')
     #thumbnail = models.ImageField(max_length=100, null=True, blank=True)
-    deus_magnus_publish_date = models.DateTimeField (auto_now_add= True)
-    deus_magnus_author = models.ForeignKey(User, on_delete=models.CASCADE)
+    mobile_publish_date = models.DateTimeField (auto_now_add= True)
+    mobile_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
        
     class Meta:
-        ordering =['-deus_magnus_publish_date']
+        ordering =['-mobile_publish_date']
     
     def __str__(self):
-        return self.deus_magnus_title + ' | ' + str(self.deus_magnus_author)
+        return self.mobile_title + ' | ' + str(self.mobile_author)
     
     def get_absolute_url(self):
-        return reverse('home','sub_video_img_detail','sub_detail_video','sub_detail',
-                       'board_detail','blog_detail','last_detail','second_detail','detail')
+        return reverse('home',)

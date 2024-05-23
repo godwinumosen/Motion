@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
+from .models import MotionMainPost
 
 # Create your views here.
 
@@ -12,5 +13,5 @@ def base (request):
 
 #The main HomeView page
 class HomeView(ListView):
-    model = DeusMagnusMainPost
-    template_name = 'deus_magnus/home.html'
+    model = MotionMainPost
+    template_name = 'motion/home.html'
