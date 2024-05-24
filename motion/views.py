@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView,ListView
 from django.contrib.auth.decorators import login_required
-from .models import MotionMainPost
+from .models import MotionMainPost,BlogMotion
 from django.contrib import messages
 
 # Create your views here.
@@ -47,3 +47,17 @@ def ContactView (request):
 
 def message (request):
     return render (request, 'motion/message.html', {})
+
+#This is the blog services category for Motion
+class BlogView(ListView):
+    model = BlogMotion
+    template_name = 'motion/blog.html'
+
+#The blog article of the blog project of Deus Magnus
+class BlogArticleDetail(DetailView):
+    model = BlogMotion
+    template_name = 'motion/blog_article_detail.html'
+
+    def BlogArticleDetail(request, pk):  
+        object = get_object_or_404(BlogMotion, pk=pk)
+        return render(request, 'motion/blog_article_detail.html', {'blog_detail': object})

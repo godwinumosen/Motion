@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+  <!-- team section -->
+
+  <section class="team_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Blog Production
+        </h2>
+        <p>
+          There’s a gap between advertising and meaningful advertising. 
+          Focused on delightful experience and successful storytelling those guys are game changers.
+        </p>
+      </div>
+      <div class="row">
+        {% for blog in object_list %}
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="box">
+            <a href="">
+            <div class="img-box">
+              <img src="{{ blog.blog_motion_img.url }}"height="250px" alt="">
+            </div>
+          </a>
+            <div class="detail-box">
+              <h5> {{ blog.blog_motion_title|truncatechars:20}}</h5>
+              <h6 class=""> {{ blog.blog_motion_description|truncatechars:50}}</h6>
+              <a href=""class="">Read More</a>
+          </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end team section -->
+
+  {% endblock %}
