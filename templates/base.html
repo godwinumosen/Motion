@@ -17,7 +17,8 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{% static 'images/fevicon.png' %}" type="image/x-icon">
-  <title>Motion Production</title>
+  
+  <title>{% block title %}Motion Production{% endblock %}</title>
  
  
 
@@ -130,7 +131,9 @@
       </div>
     </header>
     <!-- end header section -->
+   
     
+ 
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -150,7 +153,7 @@
                       products, and ideas into captivating and impactful content
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'contact' %}" class="btn1">
                         Contact Us
                       </a>
                     </div>
@@ -173,7 +176,7 @@
                       trailer that captures the action and excitement that this game provides.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'contact' %}" class="btn1">
                         Contact Us
                       </a>
                     </div>
@@ -195,7 +198,7 @@
                       We wanted to downplay the negative nature of the problems faced by game writers and present
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'contact' %}" class="btn1">
                         Contact Us
                       </a>
                     </div>
@@ -219,7 +222,6 @@
     </section>
     <!-- end slider section -->
   </div>
-
 
 
     

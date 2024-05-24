@@ -17,6 +17,14 @@ class HomeView(ListView):
     model = MotionMainPost
     template_name = 'motion/home.html'
 
+ #The first motion ArticleDetailView page
+class ArticleDetailView(DetailView):
+    model = MotionMainPost
+    template_name = 'motion/article_detail.html'
+    def ArticleDetailView(request, pk):  
+        object = get_object_or_404(MotionMainPost, pk=pk)
+        return render(request, 'article_detail.html', {'detail': object})
+
 #About page of the blog
 def AboutView (request):
     return render(request, 'motion/about_us.html', {})

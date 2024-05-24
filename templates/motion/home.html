@@ -3,9 +3,7 @@
 {% block content%}
 
 
-
   <!-- service section -->
-
   <section class="service_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center ">
@@ -152,8 +150,8 @@
               Post-Production
               And more
             </p>
-            <a href="about.html" class="">
-              Read More
+            <a href="{% url 'contact' %}" class="">
+              Contact Motion
             </a>
           </div>
         </div>
@@ -176,7 +174,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Our Team
+          Our Features Production
         </h2>
         <p>
           There’s a gap between advertising and meaningful advertising. 
@@ -184,51 +182,22 @@
         </p>
       </div>
       <div class="row">
+        {% for post in object_list %}
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
+            <a href="{% url 'detail' post.pk %}">
             <div class="img-box">
-              <img src="{% static 'images/t1.jpg' %}" alt="">
+              <img src="{{ post.motion_img.url }}"height="250px" alt="">
             </div>
+          </a>
             <div class="detail-box">
-              <h5>
-                Martin Anderson
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
+              <h5> {{ post.motion_title|truncatechars:20}}</h5>
+              <h6 class=""> {{ post.motion_description|truncatechars:50}}</h6>
+              <a href="{% url 'detail' post.pk %}"class="">Read More</a>
+          </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/t2.jpg' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Denny Butler
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/t3.jpg' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Nathan Mcpherson
-              </h5>
-              <h6 class="">
-                supervisor
-              </h6>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>

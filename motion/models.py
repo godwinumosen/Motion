@@ -7,20 +7,20 @@ from datetime import datetime, date
     
 # The main model for Deus Magnus Model category
 class MotionMainPost(models.Model):
-    mobile_title = models.CharField(max_length=255, blank=True, null=True)
-    mobile_description = models.TextField()
-    mobile_slug = models.SlugField (max_length=255,blank=True, null=True)
-    deus_manus_video = models.FileField(upload_to='videos/')
-    #thumbnail = models.ImageField(max_length=100, null=True, blank=True)
-    mobile_publish_date = models.DateTimeField (auto_now_add= True)
-    mobile_author = models.ForeignKey(User, on_delete=models.CASCADE)
+    motion_title = models.CharField(max_length=255, blank=True, null=True)
+    motion_description = models.TextField()
+    motion_slug = models.SlugField (max_length=255,blank=True, null=True)
+    #motion_video = models.FileField(upload_to='videos/')
+    motion_img = models.ImageField(upload_to='images/')
+    motion_publish_date = models.DateTimeField (auto_now_add= True)
+    motion_author = models.ForeignKey(User, on_delete=models.CASCADE)
 
        
     class Meta:
-        ordering =['-mobile_publish_date']
+        ordering =['-motion_publish_date']
     
     def __str__(self):
-        return self.mobile_title + ' | ' + str(self.mobile_author)
+        return self.motion_title + ' | ' + str(self.motion_author)
     
     def get_absolute_url(self):
         return reverse('home',)
