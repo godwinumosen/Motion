@@ -106,9 +106,6 @@
                   <a class="nav-link" href="service.html">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.html"> Team </a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                 </li>
                 <li class="nav-item">
@@ -119,11 +116,6 @@
                     </span>
                   </a>
                 </li>
-                <form class="form-inline justify-content-center">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
               </ul>
             </div>
           </nav>
@@ -237,19 +229,19 @@
       <div class="info_top">
         <div class="row">
           <div class="col-md-3 ">
-            <a class="navbar-brand" href="index.html">
-              Finter
+            <a class="navbar-brand" href="{% url 'about' %}">
+              iMotion
             </a>
           </div>
           <div class="col-md-5 ">
             <div class="info_contact">
-              <a href="">
+              <a href="https://www.google.com/maps/place/13+Ahmed+Jimoh+Cl,+Surulere,+Lagos+101241,+Lagos/@6.5116936,3.3541273,17z/data=!3m1!4b1!4m6!3m5!1s0x103b8c385307b635:0xe1d8872290c27b20!8m2!3d6.5116936!4d3.3567022!16s%2Fg%2F11dzq84rls?entry=ttu"target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
                 </span>
               </a>
-              <a href="">
+              <a href="{% url 'contact' %}">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   +01 1234567890
