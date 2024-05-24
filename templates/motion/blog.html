@@ -19,7 +19,7 @@
         {% for blog in object_list %}
         <div class="col-md-4 col-sm-6 mx-auto">
           <div class="box">
-            <a href="">
+            <a href="{% url 'blog_detail' blog.pk %}">
             <div class="img-box">
               <img src="{{ blog.blog_motion_img.url }}"height="250px" alt="">
             </div>
@@ -27,7 +27,7 @@
             <div class="detail-box">
               <h5> {{ blog.blog_motion_title|truncatechars:20}}</h5>
               <h6 class=""> {{ blog.blog_motion_description|truncatechars:50}}</h6>
-              <a href=""class="">Read More</a>
+              <a href="{% url 'blog_detail' blog.pk %}"class="">Read More</a>
           </div>
           </div>
         </div>
