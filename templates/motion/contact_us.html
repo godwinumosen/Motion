@@ -71,26 +71,25 @@
             <div class="heading_container heading_center">
               <h2>Get In Touch</h2>
             </div>
-            <form action="">
+            <form method="POST">
+              {% csrf_token %}
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="form-control" placeholder="Your Name" />
+                  <input name="message-name" type="text" class="form-control" placeholder="Your Name..." />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="email" class="form-control" placeholder="Email" />
+                  <input name="message-email" type="email" class="form-control" placeholder="Email" />
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <input type="text" class="message-box form-control" placeholder="Message" />
+                  <input name="message" type="text" class="message-box form-control" placeholder="Message" />
                 </div>
               </div>
               <div class="btn_box">
-                <button>
-                  SEND
-                </button>
+                <center><button type="submit" class="btn btn-primary" style="border-radius:5px;">Submit</button></center>
               </div>
             </form>
           </div>

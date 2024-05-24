@@ -36,9 +36,8 @@ def ContactView (request):
     if request.method == 'POST':
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
-        message_subject = request.POST['message-subject']
         message = request.POST['message'] 
-        messages.success(request, f'Your email was Successfully sent to Deus Magnus {message_name}..!')
+        messages.success(request, f'Your email was Successfully sent to iMotion ({message_name})..!')
         return redirect('/message')
     else:
         context={
