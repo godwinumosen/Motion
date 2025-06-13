@@ -33,16 +33,48 @@
               Post-Production
               And more
             </p>
-          
-            <div class="btn-wrapper">
-              <a href=""onclick="history.back(); return false;" class="btn btn-primary"style="border-radius: 10px;"><i class="fa fa-angle-left">Back</i></a>
-          </div>
+
           </div>
         </div>
         <div class="col-md-6 px-0">
           <div class="img-box ">
             <img src="{% static 'images/im.jpg' %}"height="600" class="box_img" alt="about img">
           </div>
+        </div>
+      </div>
+    </div>
+  </section><br>
+
+   <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box pr-md-2">
+            <div class="heading_container">
+              <h2 class="">
+                iMotion Production
+              </h2>
+            </div>
+            <p class="detail_p_mt">
+              Every frame tells a story.
+              Here's a glimpse into my world of visual storytelling — a mix of motion, rhythm, and emotion.
+              From music videos to animated projects, this showreel reflects my 
+              creative journey as a visual artist and storyteller.
+              Available for freelance and collaborative projects.ng 
+            </p>
+            <a href="{% url 'contact' %}" class="">
+              Contact iMotion
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <video autoplay muted playsinline loop width="100%" height="500" controls id="myVideo">
+            <source src="{% static 'video/showreel.mp4'%}" type="video/mp4">
+            <source src="{% static 'video/showreel.mp4'%}" type="video/webm">
+            Your browser does not support the video tag
+        </video> 
         </div>
       </div>
     </div>
